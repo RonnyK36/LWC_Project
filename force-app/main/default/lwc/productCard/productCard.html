@@ -1,0 +1,14 @@
+<template>
+    <lightning-card title="Avalilable Products">
+        <lightning-button label="See More" slot="actions"></lightning-button>
+        <template for:each={productList} for:item="product">
+            <div class="product-div" key={product.key}>
+                <div class="product-img"><img src={product.img} alt={product.title}></div>
+                <div class="product-info">
+                    <h3>{product.title}</h3>
+                    <p>KES {product.price}</p>
+                </div>
+            </div>
+        </template>
+</lightning-card>
+</template>
