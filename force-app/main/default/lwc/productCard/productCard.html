@@ -1,17 +1,33 @@
 <template>
+    <lightning-button label="See More" slot="actions"></lightning-button>
     <lightning-card title="Avalilable Products">
-        <lightning-button label="See More" slot="actions"></lightning-button>
-        <template for:each={productList} for:item="product">
-            <div class="product-div" key={product.key}>
-                <div class="product-img"><img src={product.img} alt={product.title}></div>
-                <div class="product-info">
-                    <h3>{product.title}</h3>
-                    <p>KES {product.price}</p>
+        <div class="wrapper">
+            <div class="product-section">
+                <template for:each={productList} for:item="product">
+                    <div class="product-div" key={product.key}>
+                        <div class="product-img"><img src={product.img} alt={product.title}></div>
+                        <div class="product-info">
+                            <h3>{product.title}</h3>
+                            <lightning-badge class="badge" label={product.price}></lightning-badge>
+                            <lightning-button variant="success" label="Add to Cart" title="Add to Cart"
+                                onclick={addToCart} value={product.key} class="slds-m-left_x-small btn">
+                            </lightning-button>
+                            <!-- variant in (Base, Neutral, Brand, Brand Outline, Destructive, Destructive Text, Success)-->
+                        </div>
+                    </div>
+                </template>
+</div>
+<div class="cart-section">
+    <p>Available cart items: </p>
+    <template for:each={cartList} for:item="item">
+                    <li key={item}>
+                        {item}
+                    </li>
+                </template>
+
+</div>
+</div>
 
 
-
-                </div>
-            </div>
-        </template>
 </lightning-card>
 </template>

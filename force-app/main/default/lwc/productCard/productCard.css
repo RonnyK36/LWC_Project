@@ -1,11 +1,22 @@
+.wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.product-section,
+.cart-section {
+    flex-basis: 48%;
+}
+
 .product-div {
     background-color: rgb(221, 255, 244);
     margin-top: 20px;
     border-radius: 5px;
     padding-left: 10px;
     padding-top: 10px;
+    padding-bottom: 10px;
     display: flex;
-    flex-direction: row;
     width: 300px;
     height: auto;
 }
@@ -16,8 +27,16 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-.product-div p {
+.badge {
+    color: green;
+    font-weight: 500;
     font-size: 14px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    color: white;
+    font-weight: bold;
 }
 
 .product-img {
